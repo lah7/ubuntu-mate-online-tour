@@ -1,33 +1,43 @@
-# [tour.ubuntu.com](http://tour.ubuntu.com)
+# Ubuntu MATE Guide
 
-An interactive web demo of the latest version of
-[Ubuntu for desktops](http://www.ubuntu.com/desktop).
+An interactive tour, demo and guide for the
+[Ubuntu MATE](http://ubuntu-mate.org)
+operating system inside a modern web browser.
 
-## Run the site locally
+Based on the [Ubuntu Online Tour](https://launchpad.net/ubuntu-online-tour).
+
+
+### Objectives:
+
+* Ensure new users are familiar before their first boot.
+* Deliver a visually stunning experience very close to the live environment.
+* Provide interactive documentation and walkthroughs for common questions.
+* Readable in multiple languages so anyone around the world can get started.
+
+
+## Testing
 
 The site is just flat HTML pages, so running the site is as easy as
 opening `en/index.html` with a browser, or running a simple server, e.g.:
 
-``` bash
-python -m SimpleHTTPServer 8000
-```
+    python -m SimpleHTTPServer 8000
 
 And visiting <http://localhost:8000/en/>.
 
-## Translate into other languages
+## Multilingual
 
 You can use the translation script to generate translated versions of the tour.
 
 First, install [python polib](https://pypi.python.org/pypi/polib)
 (`sudo apt install python-polib` on Ubuntu), then run:
 
-``` bash
-translate-html/bin/translate-html -t
-```
+    translate-html/bin/translate-html -t
+
 
 This will generate translated versions of the `en/` folder for each available language.
 
 For further help using the translator, run `translate-html/bin/translate-html --help`.
+
 
 ## Compress the site files
 
