@@ -12,7 +12,6 @@ var systemOverlay = null;
 var systemMenu = null;
 var firefoxSystem = null;
 var emailSystem = null;
-var ubuntuOneSystem = null;
 var systemSettings = null;
 var errorMessage = null;
 var shutdownSystem = null;
@@ -54,7 +53,6 @@ function setup(){
 	setupFirefoxSystem();
 	setupEmailSystem();
 	setupErrorMessage();
-	setupUbuntuOneSystem();
 	setupFileSystem();
 	setupShutdownSystem();
 	setupMoviePlayerSystem();
@@ -68,9 +66,6 @@ function setup(){
 function init(){
 	$(window).resize(function() {
 		systemOverlay.resize();
-		if(ubuntuOneSystem.isOpen()){
-			ubuntuOneSystem.resize();
-		}
 		if(welcomeSystem.isOpen()){
 			welcomeSystem.resize();
 		}
@@ -105,7 +100,6 @@ function init(){
 				$('.firefox-window .web-overlay-tran').css('width','100%');
 				$('.firefox-window .web-overlay-tran').hide();
 			}else{
-				$('.firefox-window .web-ubuntuOneSystemoverlay-tran').css('width','100px');
 				$('.firefox-window .web-overlay-tran').show();
 			}
 		}else{
@@ -344,11 +338,6 @@ function setupEmailSystem(){
 	emailSystem.init();
 }
 
-function setupUbuntuOneSystem(){
-	ubuntuOneSystem = new UbuntuOneSystem(this);
-	ubuntuOneSystem.init();
-}
-
 function setupFileSystem(){
 	fileSystem = new FileSystem(this);
 	fileSystem.init();
@@ -370,7 +359,6 @@ function closeAllWindows($tourIndex){
 	errorMessage.close();
 	firefoxSystem.close();
 	emailSystem.close();
-	ubuntuOneSystem.close();
 	fileSystem.close();
 	shotwellSystem.close();
 	libreSystem.close('writer');
