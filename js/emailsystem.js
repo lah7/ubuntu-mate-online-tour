@@ -58,7 +58,7 @@ function EmailSystem($parent){
 		});
 
 		$('#email-write input').focus(function(){
-			$(this).css('border-color','#dd4814');
+			$(this).css('border-color','#87A752');
 		});
 
 		$('#email-write input').blur(function(){

@@ -30,7 +30,7 @@ body {
 
 a {
   outline: none;
-  color: #DD4814;
+  color: #87A752;
   text-decoration: none;
   cursor: pointer;
 }
@@ -64,13 +64,13 @@ a {
   z-index: 1;
 }
 
-input::-moz-selection { background: #f07746; color: #fff; }
-input::-webkit-selection { background: #f07746; color: #fff; }
-input::selection { background: #f07746; color: #fff; }
+input::-moz-selection { background: #87A752; color: #fff; }
+input::-webkit-selection { background: #87A752; color: #fff; }
+input::selection { background: #87A752; color: #fff; }
 
-textarea::-moz-selection { background: #f07746; color: #fff; }
-textarea::-webkit-selection { background: #f07746; color: #fff; }
-textarea::selection { background: #f07746; color: #fff; }
+textarea::-moz-selection { background: #87A752; color: #fff; }
+textarea::-webkit-selection { background: #87A752; color: #fff; }
+textarea::selection { background: #87A752; color: #fff; }
 
 textarea {
   background-color: #fff;
@@ -691,7 +691,7 @@ input {
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-  background: #dd4814;
+  background: #87A752;
   height: 5px;
   width: 60px;
   margin-left: 26px;

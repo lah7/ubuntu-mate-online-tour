@@ -148,7 +148,7 @@
 
 .folder .list ul li.selected {
   color: white;
-  background-color: #ed7543;
+  background-color: #89A953;
   background-position: 20px -16px;
 }
 
@@ -335,7 +335,7 @@
 
 .selected span {
   padding: 2px 4px;
-  background-color: #f08357;
+  background-color: #87A752;
   color: white;
 }
 
