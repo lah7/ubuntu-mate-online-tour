@@ -4,7 +4,7 @@ An interactive tour, demo and guide for the
 [Ubuntu MATE](http://ubuntu-mate.org)
 operating system inside a modern web browser.
 
-Based on the [Ubuntu Online Tour](https://launchpad.net/ubuntu-online-tour).
+Originally based on the [Ubuntu Online Tour](https://launchpad.net/ubuntu-online-tour).
 
 
 ### Objectives:
@@ -15,14 +15,24 @@ Based on the [Ubuntu Online Tour](https://launchpad.net/ubuntu-online-tour).
 * Readable in multiple languages so anyone around the world can get started.
 
 
+### Supported Browsers:
+
+* Firefox
+* Chromium / Chrome
+
+
+*More browsers may be more thoroughly tested in future.*
+
+
 ## Testing
 
 The site is just flat HTML pages, so running the site is as easy as
-opening `en/index.html` with a browser, or running a simple server, e.g.:
+opening `index/en.html` with a browser, or running a simple server, e.g.:
 
     python -m SimpleHTTPServer 8000
 
 And visiting <http://localhost:8000/en/>.
+
 
 ## Multilingual
 
@@ -34,7 +44,7 @@ First, install [python polib](https://pypi.python.org/pypi/polib)
     translate-html/bin/translate-html -t
 
 
-This will generate translated versions of the `en/` folder for each available language.
+This will generate translated versions of the `index/` folder for each available language.
 
 For further help using the translator, run `translate-html/bin/translate-html --help`.
 
@@ -49,3 +59,14 @@ npm install           # First install required node modules
 gulp compress-html    # Minify HTML and bundle in optimised CSS and JS. NB: compresses HTML in-place
 gulp compress-images  # Optimise image files to make them smaller
 ```
+
+
+## Dependencies
+
+ * gulp
+ * gulp-htmlmin
+ * gulp-imagemin
+ * gulp-inline-source
+ * imagemin-pngquant
+
+

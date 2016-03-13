@@ -64,13 +64,6 @@
   box-shadow: 0px 0px 10px -5px #ADAAAA;
 }
 
-#email-window .email-address-book {
-  height: 35px;
-  width: 132px;
-  overflow: hidden;
-  background: url(../img/email/address-book.jpg) no-repeat;
-}
-
 #email-window .email-divider, #email-write .email-divider {
   height: 35px;
   width: 16px;
