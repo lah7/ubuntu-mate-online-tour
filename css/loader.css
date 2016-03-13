@@ -16,10 +16,13 @@
 #loader #dot-container {
   position: absolute;
   background: url(../img/loader/ubuntu-loader.gif) no-repeat;
-  width: 300px;
+  width: 500px;
   height: 169px;
   top: 40%;
-  left: 40%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #loader .dot {
