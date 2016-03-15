@@ -36,13 +36,11 @@ function SoftwareSystem($parent){
 				$('#software-centre').css('width','800px');
 				$('#software-centre').css('height','550px');
 				$('#software-centre').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('#software-centre').css('width',$(document).width() - 70 + 'px');
 				$('#software-centre').css('height',$(document).height() + 'px');
 				$('#software-centre').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resize();
 		});
@@ -198,7 +196,6 @@ function SoftwareSystem($parent){
 		if(_isOpen){
 			$('#software-centre .home').show();
 			$('#software-centre .detailed').hide();
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			$('#software-centre ').hide();
 			_parent.systemMenu.closeWindow('software');
 			$('#software-centre ').removeClass('fullsize');
@@ -213,7 +210,6 @@ function SoftwareSystem($parent){
 	}
 
 	this.min = function(){
-		if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 		$('#software-centre ').hide();
 		_parent.systemMenu.wiggle('software');
 		minified = true;

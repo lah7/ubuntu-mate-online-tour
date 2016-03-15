@@ -30,13 +30,11 @@ function MoviePlayerSystem($parent){
 				$('#movieplayer').css('width','700px');
 				$('#movieplayer').css('height','497px');
 				$('#movieplayer').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('#movieplayer').css('width',$(document).width() - 70 + 'px');
 				$('#movieplayer').css('height',$(document).height() + 'px');
 				$('#movieplayer').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resize();
 		});
@@ -71,7 +69,6 @@ function MoviePlayerSystem($parent){
 
 	this.close = function(){
 		_parent.openWindows['movieplayer'] = false;
-		if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 		$('#movieplayer ').hide();
 		_parent.systemMenu.closeWindow('movieplayer');
 		$('#movieplayer ').removeClass('fullsize');
@@ -82,7 +79,6 @@ function MoviePlayerSystem($parent){
 	}
 
 	this.min = function(){
-		if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 		$('#movieplayer ').hide();
 		_parent.systemMenu.wiggle('movieplayer');
 		minified = true;

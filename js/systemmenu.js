@@ -14,99 +14,17 @@ function SystemMenu($parent){
 	var scrolling = false;
 	var selectedMenu;
 
-	this.init = function(){
-
-	     $('#menu ul li').mouseover(function() {
-				$('#tooltip-text').text($(this).text());
-				$('#tooltip').css("top",$(this).position().top + $('#menu ul').position().top + 45);
-				$('#tooltip').show();
-	     });
-
-	     $('#menu ul li').click(function() {
-	     	var theClass = $(this).attr("class").replace(' bottom','');
-	     	theClass = theClass.replace(' temp', '').replace(' glow', '');
-	     	_this.handleMenuClick(theClass);
-	     });
-
-	     $('#menu ul li').mouseout(function() {
-				$('#tooltip').hide();
-	     });
-	     this.resize();
-	}
-
-	this.resize = function(){
-		var menuHeight = $(window).height() - 24;
-		$("#menu").css('height',menuHeight);
-		this.scrollCheck();
-	}
-
-	this.scrollCheck = function(){
-		var iconMaxHeight = 0;
-		$.each($('#menu ul li'), function(){
-			if ( $(this).is(':visible')){
-				iconMaxHeight += $(this).height() + 8;
-			}
-		});
-		if($('#menu ul').height() < iconMaxHeight){
-			if(!scrolling){
-				this.addScrolling();
-				$('#menu .rubbish').removeClass('bottom');
-			}
-		}else{
-			if(scrolling){
-				this.removeScrolling();
-				$('#menu .rubbish').addClass('bottom');
-			}
-		}
-	}
-
-	this.addScrolling = function(){
-		scrolling = true;
-		$('#menu').append('<div class="scroll-up"></div><div class="scroll-down"></div>');
-		$('#menu .scroll-up').bind('mouseover', function(){ scrollingUp = true; scrollUp(); });
-		$('#menu .scroll-down').bind('mouseover', function(){ scrollingDown = true; scrollDown(); });
-		$('#menu .scroll-up').bind('mouseout', function(){  _this.stopScrolling() });
-		$('#menu .scroll-down').bind('mouseout', function(){ _this.stopScrolling() });
-		$('#menu').bind('mouseleave', function(){ _this.resetScroll(); });
-	}
-
-	this.stopScrolling = function(){
-		 clearTimeout(scrollingTimer);
-		 scrollingTimer = null;
-	}
-
-	this.removeScrolling = function(){
-		scrolling = false;
-		$('#menu').unbind('mousemove');
-		$('#menu').unbind('mouseout');
-		$('#menu .scroll-up').remove();
-		$('#menu .scroll-down').remove();
-		$('#menu .scroll-up').unbind('mouseover');
-		$('#menu .scroll-down').unbind('mouseover');
-		$('#menu .scroll-up').unbind('mouseoout');
-		$('#menu .scroll-down').unbind('mouseoout');
-	}
-
-	this.resetScroll = function(){
-		$('#menu ul').css('top','0px');
+	this.init = function() {
+    console.log('fixme:window list unimplemented: init systemmenu')
 	}
 
 	this.handleMenuClick = function($menu){
 		var openedApp = true;
-		if($menu != 'dash'){
-			selectedMenu = $menu;
-		}
 		switch($menu){
-			case 'dash':
-				$('#menu .selected-window-arrow').hide();
-				$('#menu .dash .selected-window-arrow').show();
-				_parent.systemOverlay.open();
-			break;
 			case 'home':
 				var div = $('.folder');
 				 if(!div.is(':visible')){
 					if(fileSystem.isMinified()){
-						if(fileSystem.isMaximised()){ systemSettings.increaseFullscreen();}
 						fileSystem.reset(false);
 					}else{
 						fileSystem.reset(true);
@@ -119,7 +37,6 @@ function SystemMenu($parent){
 				var div = $('.firefox-window');
 				 if(!div.is(':visible')){
 				 	_parent.firefoxSystem.open();
-					if(_parent.firefoxSystem.isMaximised()){ _parent.systemSettings.increaseFullscreen();}
 				 }
 				 $('.firefox-window ').trigger('mousedown');
 			break;
@@ -127,7 +44,6 @@ function SystemMenu($parent){
 				var div = $('#shotwell');
 				 if(!div.is(':visible')){
 					_parent.shotwellSystem.open();
-					if(_parent.shotwellSystem.isMaximised()){ _parent.systemSettings.increaseFullscreen();}
 				 }
 				 div.trigger('mousedown');
 			break;
@@ -170,7 +86,6 @@ function SystemMenu($parent){
 				var div = $('.email-window ');
 				 if(!div.is(':visible')){
 				 	_parent.emailSystem.open();
-					if(_parent.emailSystem.isMaximised()){ _parent.systemSettings.increaseFullscreen();}
 				 }
 				 if(_parent.emailSystem.isWriteMinified()){
 				 	$('#email-write').show();
@@ -184,7 +99,6 @@ function SystemMenu($parent){
 				 if(!div.is(':visible')){
 				 	moviePlayerSystem.center();
 					_parent.moviePlayerSystem.open();
-					if(_parent.moviePlayerSystem.isMaximised()){ _parent.systemSettings.increaseFullscreen();}
 				 }
 				 $('#movieplayer ').trigger('mousedown');
 			break;
@@ -199,7 +113,6 @@ function SystemMenu($parent){
 						_parent.fileSystem.updateDir('/'+_rubbish_bin_folder_);
 					}
 					$('.folder').show();
-					$("#menu ul li.home img").show();
 				}else{
 					_parent.fileSystem.updateDir('/'+_rubbish_bin_folder_);
 				}
@@ -220,13 +133,7 @@ function SystemMenu($parent){
 			break;
 		}
 		if(openedApp){
-			$("#menu ul li."+$menu+" img.open-arrow").show();
-			var $currentBackground = $("#menu ul li."+$menu).css('background-image');
-			if($menu != 'dash' && $menu != 'rubbish' && $currentBackground.indexOf('-active') == -1){
-				$indexLastSlash = $currentBackground.lastIndexOf('.');
-				$newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '-active.png';
-				$("#menu ul li."+$menu).css('background-image',$newBackgroundLink).css('display',' list-item');
-			}
+      console.log('fixme:handleMenuClick for openedApp.')
 		}
 	}
 
@@ -234,36 +141,10 @@ function SystemMenu($parent){
 		return selectedMenu;
 	}
 
-	this.increaseFullscreen = function(){
-		//_parent.systemSettings.increaseFullscreen();
-	}
-
-	this.decreaseFullscreen = function(){
-		//_parent.systemSettings.decreaseFullscreen();
-	}
-
-	this.wiggle = function($icon){
-		$('#menu').css('overflow','visible');
-		_parent.noWIndowSelected();
-		//$("#menu ul li."+$icon).stop(true,false).animate({"marginLeft": "30px"}, "1000") .animate({"marginLeft": "0px"}, "1000", function(){ $('#menu').css('overflow','hidden'); });
-		$("#menu ul li."+$icon).addClass('glow').delay(600).queue(function(next){
-		    $(this).removeClass("glow");
-		    next();
-		});
-
-	}
-
 	this.closeWindow = function($icon){
-		$("#menu ul li."+$icon+" img").hide();
-		var $currentBackground = $("#menu ul li."+$icon).css('background-image');
-		$("#menu ul li."+$icon).css('background-image',$currentBackground.replace('-active',''));
-		if($("#menu ul li."+$icon).hasClass('temp')){
-			$("#menu ul li."+$icon).hide();
-		}
-		$('#top #top-left #title').text('');
+    console.log('fixme:unimplemented closeWindow')
 
 		_parent.guidedTourSystem.setCurrentIndex(-1);
-		this.scrollCheck();
 	}
 
 	this.openWindow = function($icon){
@@ -271,20 +152,6 @@ function SystemMenu($parent){
 			$("#menu ul li."+$icon).show();
 		}
 		$("#menu ul li."+$icon+" img").show();
-		this.scrollCheck();
 	}
 
-}
-
-function scrollUp(){
-		var pos = Math.min(0,$('#menu ul').position().top +5);
-		$('#menu ul').css('top',pos+'px');
-		scrollingTimer = setTimeout("scrollUp()",50);
-}
-
-function scrollDown(){
-	var maxscroll =  ($(window).height() - 24) - ($('#menu ul .rubbish').position().top + $('#menu ul .rubbish').height() + 30);
-	var pos = Math.max(maxscroll ,Math.min(0,$('#menu ul').position().top - 5));
-	$('#menu ul').css('top',pos+'px');
-	scrollingTimer = setTimeout("scrollDown()",50);
 }

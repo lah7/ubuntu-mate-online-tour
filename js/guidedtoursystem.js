@@ -27,7 +27,8 @@ function GuidedTourSystem($parent){
 	this.init = function(){
 		homeGuide = {system:'welcome',icon:null, title:null, desc:'We hope you\'ve enjoyed the Ubuntu online tour. <a href="http://www.ubuntu.com/download/ubuntu/download#tour" target="_blank">Ready to download?</a> or <a href="/ubuntu/take-the-tour" >Back to the site</a>', hash: '#'};
 		
-		browserfilesGuide = {system:'home',icon:'img/tourguide/file-small.png', title:'Browse files', desc:'It’s quick and easy to access your folders and files from Ubuntu’s home folder.', hash: 'browser-files'};
+
+		browserfilesGuide = {system:'home',icon:'img/tourguide/file-small.png', title:'Browse files', desc:'It’s quick and easy to access your folders and files from Ubuntu’s home folder.', hash: 'browse-files'};
 		surfthewebGuide = {system:'firefox',icon:'img/tourguide/firefox-small.png', title:'Surf the web', desc:'Browsing the web is fast and secure with Ubuntu and Firefox.', hash: 'surf-the-web'};
 		checkemailGuide = {system:'email',icon:'img/tourguide/mail-small.png', title:'Check email', desc:'Read, write and send emails with Thunderbird. It’s easy and fast.', hash: 'check-email'};
 		viewphotosGuide = {system:'shotwell',icon:'img/tourguide/shotwell-small.png', title:'View photos', desc:'You can upload, organise, edit and share your photos with Shotwell.', hash: 'view-photos'};

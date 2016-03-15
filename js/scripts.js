@@ -8,7 +8,6 @@ var movingFolder = null;
 var folderXOffset = 0;
 var folderYOffset = 0;
 var fileSystem = null;
-var systemOverlay = null;
 var systemMenu = null;
 var firefoxSystem = null;
 var emailSystem = null;
@@ -49,7 +48,6 @@ function setup(){
 	setupGuidedTourSystem();
 	setupShotwellSystem();
 	setupSystemMenu();
-	setupSystemOverlay();
 	setupFirefoxSystem();
 	setupEmailSystem();
 	setupErrorMessage();
@@ -65,7 +63,6 @@ function setup(){
 
 function init(){
 	$(window).resize(function() {
-		systemOverlay.resize();
 		if(welcomeSystem.isOpen()){
 			welcomeSystem.resize();
 		}
@@ -108,7 +105,6 @@ function init(){
 		}
 		$('.window').css('z-index',2);
 		$('.window').removeClass('selected-window');
-		$('#top #top-left #title').text($('.window-title', this).text());
 		$('.'+currentSystemSelected).css('z-index',3);
 		$(this).css('z-index',4);
 
@@ -125,13 +121,10 @@ function init(){
 			currentSystemSelected = $(this).attr('class').replace(' fullsize', '');
 			currentSystemSelected = currentSystemSelected.replace(' selected-window','');
 			currentSystemSelected = currentSystemSelected.replace(' window', '');
-			$('#menu ul li .selected-window-arrow').hide();
 			var set = currentSystemSelected;
 			if(set == 'folder'){ set = 'home'; }
 			if(set == 'firefox-window'){ set = 'firefox'; }
 			if(set == 'email-window'){ set = 'email'; }
-
-			$('#menu ul li.'+set+' .selected-window-arrow').show();
 
 			guidedTourSystem.setSystem(set);
 		}
@@ -141,32 +134,31 @@ function init(){
 
 function noWIndowSelected(){
 	currentSystemSelected = null;
-	$('#menu ul li .selected-window-arrow').hide();
 }
 
 function setupTopMenu(){
-	$('#top #top-right div').bind('click', function(){
+	$('.panel .panel-items div').bind('click', function(){
 		var hasSelected = $(this).hasClass('selected');
-		closeTopRightDropDowns();
 		if(!hasSelected){
+		closeDropDowns();
 			$(this).addClass('selected');
 			$('.drop-down',this).show();
 			addTransOverlay();
-			$('#top #top-right div').bind('mouseover',function(){
+			$('.panel .panel-items div').bind('mouseover',function(){
 				if(!$(this).hasClass('selected')){
-					$('#top #top-right div').removeClass('selected');
-					$('#top #top-right .drop-down').hide();
+					$('.panel .panel-items div').removeClass('selected');
+					$('.panel .panel-items .drop-down').hide();
 					$(this).addClass('selected');
 					$('.drop-down',this).show();
 				}
 			});
 		}else{
-			$('#top #top-right div').unbind('mouseover');
+			$('.panel .panel-items div').unbind('mouseover');
 			//systemMenu.setLocked(false);
 		}
 	});
 
-	$('#top #top-right div ul li').bind('click',function(){
+	$('.panel .panel-items div ul li').bind('click',function(){
 		switch($.trim($(this).text())){
 			case _turn_off_bluetooth_:
 				systemSettings.setBluetooth(false);
@@ -204,7 +196,7 @@ function setupTopMenu(){
 		}
 	});
 
-	$('#top #top-right #speakers .slider').slider({
+	$('.panel .panel-items #speakers .slider').slider({
 			min: 0,
 			max: 100,
 			step: 1,
@@ -220,26 +212,12 @@ function setupTopMenu(){
 			}
 		});
 
-
-	$('#top #top-left #control-buttons div').bind('click', function(){
-		var buttonClicked = $(this).attr('id');
-		$('.'+currentSystemSelected+ ' .control .'+buttonClicked).trigger('click');
-	});
-
-	$('#top #top-right #speakers .banshee').mouseover(function(){
-		$('#top #top-right #speakers .banshee .banshee-play').css('background-image','url(../img/top/banshee-play-highlight.png)');
-	});
-
-	$('#top #top-right #speakers .banshee').mouseout(function(){
-		$('#top #top-right #speakers .banshee .banshee-play').css('background-image','url(../img/top/banshee-play.png)');
-	});
-
 }
 
 function sliderUpdate($percent, $muted){
 	var active = parseInt((195 * $percent) / 100);
 	if(active < 10){ active = 0; }
-	$('#top #top-right #speakers .drop-down .slider-active').css('width',active);
+	$('.panel .panel-items #speakers .drop-down .slider-active').css('width',active);
 	var imageIndex = 0;
 	if(systemSettings.mute()){
 		imageIndex = 0;
@@ -254,34 +232,29 @@ function sliderUpdate($percent, $muted){
 	}
 	if($muted != undefined){
 		if($muted){
-			$('#top #top-right #speakers .slider').slider({value: 0});
+			$('.panel .panel-items #speakers .slider').slider({value: 0});
 		}else{
-			$('#top #top-right #speakers .slider').slider({value: systemSettings.volume()});
+			$('.panel .panel-items #speakers .slider').slider({value: systemSettings.volume()});
 		}
 	}
-	$('#top #top-right #speakers img.speakers-logo').attr('src', '../img/top/speakers'+imageIndex+'.png');
+	$('.panel .panel-items #speakers img.speakers-logo').attr('src', '../img/panel/speakers'+imageIndex+'.png');
 }
 
-function closeTopRightDropDowns(){
-	$('#top #top-right div').removeClass('selected');
-	$('#top #top-right .drop-down').hide();
+function closeDropDowns() {
+	$('.panel .panel-items div').removeClass('selected');
+	$('.panel .panel-items .drop-down').hide();
 	$('.fullscreenTransOverlay').unbind('click');
 	$('.fullscreenTransOverlay').remove();
-	$('#top #top-right div').unbind('mouseover');
+	$('.panel .panel-items div').unbind('mouseover');
 }
 
 function addTransOverlay(){
 	$('body').append('<div class="fullscreenTransOverlay"></div>');
 	//systemMenu.setLocked(true);
 	$('.fullscreenTransOverlay').bind('click',function(){
-		closeTopRightDropDowns();
+		closeDropDowns();
 	});
 }
-
-/*function setupWorkspaces(){
-	workspaces = new Workspaces(this);
-	workspaces.init();
-}*/
 
 function setupSystemSettings(){
 	systemSettings = new SystemSettings(this);
@@ -291,11 +264,6 @@ function setupSystemSettings(){
 function setupErrorMessage(){
 	errorMessage = new ErrorMessage(this);
 	errorMessage.init();
-}
-
-function setupSystemOverlay(){
-	systemOverlay = new SystemOverlay(this);
-	systemOverlay.init();
 }
 
 function setupSystemMenu(){
@@ -355,7 +323,6 @@ function setupGuidedTourSystem(){
 
 function closeAllWindows($tourIndex){
 	var _tourIndex = $tourIndex;
-	$('#systemOverlay').hide();
 	errorMessage.close();
 	firefoxSystem.close();
 	emailSystem.close();
@@ -394,133 +361,3 @@ function setupShotwellSystem(){
 	shotwellSystem = new ShotwellSystem(this);
 	shotwellSystem.init();
 }
-
-function topShadow($display){
-	if($display){
-		$('#top').addClass('dropShadow');
-		$('#control-buttons').hide();
-		$('#top').unbind('mouseover');
-		$('#top').unbind('mouseout');
-	}else{
-		$('#top').removeClass('dropShadow');
-		$('#top').bind('mouseover',function(){
-			currentSystemSelected = currentSystemSelected.replace(' pie_hover','');
-			var currentWindowFullScreen = $('.'+currentSystemSelected).hasClass('fullsize');
-			if(!$('#systemOverlay').is(':visible') && currentWindowFullScreen){
-				$('#control-buttons').show();
-			}
-		});
-		$('#top').bind('mouseout',function(){
-			$('#control-buttons').hide();
-		});
-	}
-}
-
-function blurWindows(){
-		var $currentBackground = '';
-		var $indexLastSlash = 0;
-		var $newBackgroundLink = '';
-		for(i in openWindows){
-			if(openWindows[i] == true){
-				$('#'+i).addClass('blurred');
-				$.each($('#'+i+' *'), function(){
-					if($(this).is('img')){
-						$currentBackground = $(this).attr('src');
-						$indexLastSlash = $currentBackground.lastIndexOf('/');
-						$newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-						$(this).attr('src',$newBackgroundLink);
-					}else{
-						$currentBackground = $(this).css('background-image');
-						if($currentBackground != 'none'){
-							 $indexLastSlash = $currentBackground.lastIndexOf('/');
-							 $newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-							$(this).css('background-image',$newBackgroundLink);
-						}
-					}
-				});
-			}
-		}
-
-		/*$.each($('#menu *'), function(){
-			if($(this).is('img')){
-				$currentBackground = $(this).attr('src');
-				$indexLastSlash = $currentBackground.lastIndexOf('/');
-				$newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-				$(this).attr('src',$newBackgroundLink);
-			}else{
-				$currentBackground = $(this).css('background-image');
-				if($currentBackground != 'none'){
-					 $indexLastSlash = $currentBackground.lastIndexOf('/');
-					 $newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-					$(this).css('background-image',$newBackgroundLink);
-				}
-			}
-		});*/
-		$.each($('#top-right *'), function(){
-			if($(this).is('img')){
-				$currentBackground = $(this).attr('src');
-				$indexLastSlash = $currentBackground.lastIndexOf('/');
-				$newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-				$(this).attr('src',$newBackgroundLink);
-			}else{
-				$currentBackground = $(this).css('background-image');
-				if($currentBackground != 'none'){
-					 $indexLastSlash = $currentBackground.lastIndexOf('/');
-					 $newBackgroundLink = $currentBackground.substr(0,$indexLastSlash) + '/blur' + $currentBackground.substr($indexLastSlash);
-					$(this).css('background-image',$newBackgroundLink);
-				}
-			}
-		});
-
-}
-
-function unblurWindows(){
-		var $currentBackground = '';
-		var $newBackgroundLink = '';
-		for(i in openWindows){
-			if(openWindows[i] == true){
-				$('#'+i).removeClass('blurred');
-				$.each($('#'+i+' *'), function(){
-					if($(this).is('img')){
-						$currentBackground = $(this).attr('src');
-						$newBackgroundLink = $currentBackground.replace('/blur','');
-						$(this).attr('src',$newBackgroundLink);
-					}else{
-						$currentBackground = $(this).css('background-image');
-						if($currentBackground != 'none'){
-							$newBackgroundLink = $currentBackground.replace('/blur','');
-							$(this).css('background-image',$newBackgroundLink)
-						}
-					}
-				});
-			}
-		}
-
-		$.each($('#menu *'), function(){
-			if($(this).is('img')){
-				$currentBackground = $(this).attr('src');
-				$newBackgroundLink = $currentBackground.replace('/blur','');
-				$(this).attr('src',$newBackgroundLink);
-			}else{
-				$currentBackground = $(this).css('background-image');
-				if($currentBackground != 'none'){
-					$newBackgroundLink = $currentBackground.replace('/blur','');
-					$(this).css('background-image',$newBackgroundLink)
-				}
-			}
-		});
-		$.each($('#top-right *'), function(){
-			if($(this).is('img')){
-				$currentBackground = $(this).attr('src');
-				$newBackgroundLink = $currentBackground.replace('/blur','');
-				$(this).attr('src',$newBackgroundLink);
-			}else{
-				$currentBackground = $(this).css('background-image');
-				if($currentBackground != 'none'){
-					$newBackgroundLink = $currentBackground.replace('/blur','');
-					$(this).css('background-image',$newBackgroundLink)
-				}
-			}
-		});
-}
-

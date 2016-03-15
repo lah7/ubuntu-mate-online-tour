@@ -22,7 +22,6 @@ function FirefoxSystem($parent){
 			_this.close();
 		});
 		$('.firefox-window  .control .min').click(function(){
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			$('.firefox-window ').hide();
 			_parent.systemMenu.wiggle('firefox');
 		});
@@ -34,7 +33,6 @@ function FirefoxSystem($parent){
 				$('.firefox-window').css('width','900px');
 				$('.firefox-window .web-overlay-tran').css('width','100%');
 				$('.firefox-window .web-overlay-tran').hide();
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('.firefox-window').addClass('fullsize');
@@ -42,7 +40,6 @@ function FirefoxSystem($parent){
 				$('.firefox-window').css('width',$(document).width() - 70 + 'px');
 				$('.firefox-window .web-overlay-tran').css('width','100px');
 				$('.firefox-window .web-overlay-tran').show();
-				_parent.systemSettings.increaseFullscreen();
 			}
 
 			resize();
@@ -79,7 +76,6 @@ function FirefoxSystem($parent){
 	    	if(_isOpen){}
 	    	_parent.openWindows['firefox-window'] = false;
 	    	$('.firefox-window ').hide();
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			center();
 			internalClick = false;
 			changeURL(homePage);

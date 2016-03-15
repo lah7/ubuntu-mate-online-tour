@@ -71,7 +71,6 @@ function EmailSystem($parent){
 
 		$('#email-write .control .min').click(function(){
 			$('#email-write').hide();
-			if(writeMaximised){ _parent.systemSettings.decreaseFullscreen(); }
 			_parent.systemMenu.wiggle('email');
 			writeMinified = true;
 		});
@@ -82,13 +81,11 @@ function EmailSystem($parent){
 				$('#email-write').css('width','900px');
 				$('#email-write').css('height','610px');
 				$('#email-write').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				writeMaximised = true;
 				$('#email-write').css('width',$(document).width() - 70 + 'px');
 				$('#email-write').css('height',$(document).height() + 'px');
 				$('#email-write').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resizeMessage();
 		});
@@ -99,7 +96,6 @@ function EmailSystem($parent){
 
 		$('.email-window .control .min').click(function(){
 			$('.email-window').hide();
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			_parent.systemMenu.wiggle('email');
 			minified = true;
 		});
@@ -110,13 +106,11 @@ function EmailSystem($parent){
 				$('.email-window').css('width','900px');
 				$('.email-window').css('height','600px');
 				$('.email-window').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('.email-window').css('width',$(document).width() - 70 + 'px');
 				$('.email-window').css('height',$(document).height() + 'px');
 				$('.email-window').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resize();
 		});
@@ -265,7 +259,6 @@ function EmailSystem($parent){
 			_parent.openWindows['email-window'] = false;
 			$('.email-window').hide();
 			$('#email-write').hide();
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			_parent.systemMenu.closeWindow('email');
 			$('.email-window').removeClass('fullsize');
 			writeMaximised = writeMinified = maximised = maximised = false;
@@ -281,7 +274,6 @@ function EmailSystem($parent){
 		var folderContents = '';
 		var i = emails.length;
 		while(i--){
-			if(!emails[i].read()){ _parent.systemSettings.gotMail(true); }
 			if(emails[i].folder() == currentFolder && !emails[i].deleted()){
 				folderContents +=  emails[i].draw(i);
 				emailCount++;
@@ -350,10 +342,12 @@ function EmailSystem($parent){
 	}
 
 	this.checkMessageNotification = function(){
-		if(unreadCount > 0){
-			_parent.systemSettings.gotMail(true);
-		}else{
-			_parent.systemSettings.gotMail(false);
+		if ( unreadCount > 0 ) {
+      // New e-mail arrived.
+			return
+		} else {
+      // No longer new e-mail.
+			return
 		}
 	}
 

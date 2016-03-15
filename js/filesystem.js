@@ -54,7 +54,6 @@ function FileSystem($parent, $startingDir){
 			_this.close();
 		});
 		$('.folder .control .min').click(function(){
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			$('.folder').hide();
 			_parent.systemMenu.wiggle('home');
 			minified = true;
@@ -66,13 +65,11 @@ function FileSystem($parent, $startingDir){
 				$('.folder').css('height','500px');
 				$('.folder').css('width','730px');
 				$('.folder').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('.folder').css('height',$(document).height() + 'px');
 				$('.folder').css('width',$(document).width() - 70 + 'px');
 				$('.folder').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resize();
 			_this.center();
@@ -129,7 +126,6 @@ function FileSystem($parent, $startingDir){
 	this.close = function(){
 		if(_isOpen){
 			_parent.openWindows['folder-window'] = false;
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			$('.folder').hide();
 			_parent.systemMenu.closeWindow('home');
 			$('.folder').removeClass('fullsize');

@@ -37,13 +37,11 @@ function ShotwellSystem($parent){
 				$('#shotwell').css('width','800px');
 				$('#shotwell').css('height','550px');
 				$('#shotwell ').removeClass('fullsize');
-				_parent.systemSettings.decreaseFullscreen();
 			}else{
 				maximised = true;
 				$('#shotwell').css('width',$(document).width() - 70 + 'px');
 				$('#shotwell').css('height',$(document).height() + 'px');
 				$('#shotwell ').addClass('fullsize');
-				_parent.systemSettings.increaseFullscreen();
 			}
 			_this.resize();
 		});
@@ -221,7 +219,6 @@ function ShotwellSystem($parent){
 			_this.display();
 			_this.sliderUpdate(currentPercent);
 
-			if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 			$('#shotwell ').hide();
 			_parent.systemMenu.closeWindow('shotwell');
 			$('#shotwell ').removeClass('fullsize');
@@ -232,7 +229,6 @@ function ShotwellSystem($parent){
 	}
 
 	this.min = function(){
-		if(maximised){ _parent.systemSettings.decreaseFullscreen(); }
 		$('#shotwell ').hide();
 		_parent.systemMenu.wiggle('shotwell');
 		minified = true;

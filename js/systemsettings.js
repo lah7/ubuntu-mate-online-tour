@@ -43,15 +43,6 @@ function SystemSettings($parent){
 		//$('#welcome #welcome-screen h1').text('Welcome to '+_systemName);
 	}
 
-	this.gotMail = function($mail){
-		_gotMessage = $mail;
-		if($mail && $('#top #top-right #message .message-logo').attr('src') == '../img/top/nomessage.jpg'){
-			$('#top #top-right #message .message-logo').attr('src', '../img/top/gotmessage.jpg');
-		}else if(!$mail && $('#top #top-right #message .message-logo').attr('src') == '../img/top/gotmessage.jpg'){
-			$('#top #top-right #message .message-logo').attr('src', '../img/top/nomessage.jpg');
-		}
-	}
-
 	this.setGuidedTour = function($ogt){
 		_onGuidedTour = $ogt;
 	}
@@ -75,26 +66,15 @@ function SystemSettings($parent){
 	this.setBluetooth = function($bluetooth){
 		_bluetooth = $bluetooth;
 		if(_bluetooth){
-			$('#top #top-right #bluetooth ul li.bluetooth').text(_turn_on_bluetooth_);
-				$('#top #top-right #bluetooth img').removeClass('disabled');
-			$('#top #top-right #bluetooth ul li.BtOn').show();
+			$('.panel .panel-right #bluetooth ul li.bluetooth').text(_turn_on_bluetooth_);
+				$('.panel .panel-right #bluetooth img').removeClass('disabled');
+			$('.panel .panel-right #bluetooth ul li.BtOn').show();
 		}else{
-			$('#top #top-right #bluetooth ul li.bluetooth').text(_turn_off_bluetooth_);
-			$('#top #top-right #bluetooth img').addClass('disabled');
-			$('#top #top-right #bluetooth ul li.BtOn').hide();
+			$('.panel .panel-right #bluetooth ul li.bluetooth').text(_turn_off_bluetooth_);
+			$('.panel .panel-right #bluetooth img').addClass('disabled');
+			$('.panel .panel-right #bluetooth ul li.BtOn').hide();
 		}
 	}
-
-	this.increaseFullscreen = function(){
-		_fullscreenCount++;
-		_parent.topShadow(false);
-	}
-
-	this.decreaseFullscreen = function(){
-		_fullscreenCount--;
-		if(_fullscreenCount <= 0){
-			_parent.topShadow(true);
-			_parent.noWIndowSelected();
 		}
 	}
 

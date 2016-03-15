@@ -29,7 +29,7 @@ function ShutdownSystem(){
 	}
 	
 	this.shutdownClicked = function(){
-		window.location.href = 'http://www.ubuntu.com/ubuntu/take-the-tour';
+		window.location.href = 'http://ubuntu-mate.org';
 	}
 	
 	this.open = function(){
