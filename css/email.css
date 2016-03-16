@@ -331,8 +331,6 @@
   margin-bottom: 5px;
 }
 
-
-
 #email-window .email-contents .email-body .message-header .email-buttons div span {
   height: 24px;
   float: left;
@@ -363,15 +361,19 @@
 #email-window .email-contents .email-body .message-header .email-buttons .message-reply:before {
   content: url('../img/email/icons/reply.png');
 }
+
 #email-window .email-contents .email-body .message-header .email-buttons .message-forward:before {
   content: url('../img/email/icons/forward.png');
 }
+
 #email-window .email-contents .email-body .message-header .email-buttons .message-archive:before {
   content: url('../img/email/icons/archive.png');
 }
+
 #email-window .email-contents .email-body .message-header .email-buttons .message-junk:before {
   content: url('../img/email/icons/junk.png');
 }
+
 #email-window .email-contents .email-body .message-header .email-buttons .message-delete:before {
   content: url('../img/email/icons/delete.png');
 }
@@ -568,7 +570,7 @@
 }
 
 #email-write .control {
-    margin-left: 0;
-    padding-bottom: 43px;
-    padding-left: 10px;
+  margin-left: 0;
+  padding-bottom: 43px;
+  padding-left: 10px;
 }

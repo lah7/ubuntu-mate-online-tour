@@ -21,12 +21,12 @@
   width: 660px;
   left: 0;
   top: 0;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -khtml-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
-    -moz-box-shadow: 0 0 10px #000;
-      -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
   box-shadow: 0 0 10px #000;
   position: absolute;
   color: #4c4c4c;
@@ -38,14 +38,14 @@
 
 #welcome-screen .control {
   margin-bottom: 6px;
-    margin-top: -25px;
+  margin-top: -25px;
 }
 
 #welcome-screen .welcome-header {
   background: url("../img/welcome/circle-of-friends.png") 20px 20px no-repeat #fff;
   height: 108px;
-    padding: 7px 100px 0 110px;
-    border-bottom: 1px solid #d5d5d5;
+  padding: 7px 100px 0 110px;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 #welcome-screen .welcome-select {
@@ -183,8 +183,8 @@
 #welcome-screen .explore-mode,
 #welcome-screen .tour-mode {
   padding: 10px 20px;
-    -moz-border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
   border-radius: 4px 4px 4px 4px;
   display: block;
   float: right;
@@ -203,8 +203,8 @@
 
 
 #welcome-screen .language-mode {
-    -moz-border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
   border-radius: 4px 4px 4px 4px;
   display: block;
   float: left;

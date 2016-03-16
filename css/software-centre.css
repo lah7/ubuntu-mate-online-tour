@@ -96,9 +96,9 @@
 #software-centre .header-image {
   width: 100%;
   background: url("../img/software-centre/header.jpg") no-repeat scroll 0 0 #FFFFFF;
-    height: 188px;
-      -moz-box-shadow: 0 1px 2px #888888;
-    -webkit-box-shadow: 0 1px 2px #888888;
+  height: 188px;
+  -moz-box-shadow: 0 1px 2px #888888;
+  -webkit-box-shadow: 0 1px 2px #888888;
   box-shadow: 0 1px 2px #888888;
 }
 
@@ -142,8 +142,8 @@
   font-size: 12px;
   height: 348px;
   margin-bottom: 10px;
-    -moz-box-shadow: 0 2px 3px #888888;
-    -webkit-box-shadow: 0 2px 3px #888888;
+  -moz-box-shadow: 0 2px 3px #888888;
+  -webkit-box-shadow: 0 2px 3px #888888;
   box-shadow: 0 2px 3px #888888;
 }
 
@@ -161,15 +161,15 @@
 #software-centre .whats-new {
   float: left;
   width: 602px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   border: 1px solid #a9a5a7;
   font-size: 12px;
   padding-bottom: 5px;
   margin: 10px 0 0 10px;
-    -moz-box-shadow: 0 2px 3px #888888;
-    -webkit-box-shadow: 0 2px 3px #888888;
+  -moz-box-shadow: 0 2px 3px #888888;
+  -webkit-box-shadow: 0 2px 3px #888888;
   box-shadow: 0 2px 3px #888888;
 }
 
@@ -177,8 +177,8 @@
   width: 100%;
   padding: 5px 0 0 5px;
   height: 26px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   font-size: 14px;
   overflow: hidden;
@@ -191,7 +191,7 @@
   border-top: 1px solid #e7e4e6;
   border-left: 1px solid #e7e4e6;
   padding-left: 80px;
-    width: 119px;
+  width: 119px;
 }
 
 #software-centre .whats-new .app-container div:active {
@@ -326,8 +326,8 @@
   float: right;
   padding: 4px;
   margin: 10px;
-    -moz-border-radius: 2px 2px 2px 2px;
-    -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
   border: 1px solid #b4b2b3;
 }
@@ -338,8 +338,8 @@
   background: url(../img/software-centre/install-button.jpg) repeat-x;
   padding: 3px;
   color: #666;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
   border: 1px solid #b9b9b9;
   margin-top: -3px;
