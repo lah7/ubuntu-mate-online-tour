@@ -1,6 +1,7 @@
 /*
  *  Guided Tour System
- *  author: Anthony Dillon
+ *
+ *  Authors:  2011-2012, Anthony Dillon
  */
 
 function GuidedTourSystem($parent) {

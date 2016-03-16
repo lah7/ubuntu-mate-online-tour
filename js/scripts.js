@@ -1,6 +1,7 @@
 /*
- *  Main Script System
- *  author: Anthony Dillon
+ *  Main System
+ *
+ *  Authors:  2011-2014, Anthony Dillon
  */
 
 var _this = this;

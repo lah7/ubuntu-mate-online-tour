@@ -1,6 +1,7 @@
 /*
  *  Error Message
- *  author: Anthony Dillon
+ *
+ *  Authors:  2011, Anthony Dillon
  */
 
 function ErrorMessage($parent) {

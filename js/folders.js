@@ -1,6 +1,8 @@
 /*
-* Folder object
-*  author: Anthony Dillon
+ *  Virtual Folders Interface
+ *
+ *  Authors:  2011, Anthony Dillon
+ *            2014, deadlight@bgr0.com
 */
 
 function Folder($name, $location, $icon) {

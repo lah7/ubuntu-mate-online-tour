@@ -1,6 +1,7 @@
 /*
  *  Movie Player System
- *  author: Anthony Dillon
+ *
+ *  Authors:  2011-2014, Anthony Dillon
  */
 
 function MoviePlayerSystem($parent) {

@@ -1,7 +1,9 @@
 /*
-* File system
-* author: Anthony Dillon
-*/
+ *  Caja File Manager
+ *
+ *  Authors:  2011-2014, Anthony Dillon
+ *            2016, Barry McGee
+ */
 
 function FileSystem($parent, $startingDir) {
 

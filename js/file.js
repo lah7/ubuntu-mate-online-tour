@@ -1,6 +1,7 @@
 /*
- *  File Object
- *  author: Anthony Dillon
+ *  Virtual File Interface
+ *
+ *  Authors:  2011-2012, Anthony Dillon
  */
 
 function File($id, $url, $type, $name, $size, $date ,$location) {

@@ -1,7 +1,12 @@
 /*
-* System Menu
-*  author: Anthony Dillon
-*/
+ *  System Menu / Panels / Window Switcher
+ *
+ *  Authors:  2011-2014, Anthony Dillon
+ *            2014, deadlight@bgr0.com
+ *            ----------------------------
+ *            2016, Luke Horwell <lukehorwell37+code@gmail.com>
+ */
+
 var scrollingTimer = null;
 function SystemMenu($parent) {
   var _parent = $parent;

@@ -1,7 +1,9 @@
 /*
-* Email system
-*  author: Anthony Dillon
-*/
+ *  Thunderbird Mail Client
+ *
+ *  Authors:  2011-2014, Anthony Dillon
+ *            2016, Barry McGee
+ */
 
 function EmailSystem($parent) {
   var emails = new Array();

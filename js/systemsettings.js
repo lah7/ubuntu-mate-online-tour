@@ -1,6 +1,7 @@
 /*
- *  System Settings
- *  author: Anthony Dillon
+ *  Panel Applets
+ *
+ *  Authors:  2011-2014, Anthony Dillon
  */
 
 function SystemSettings($parent) {

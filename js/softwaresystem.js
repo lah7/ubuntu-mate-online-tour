@@ -1,7 +1,8 @@
 /*
-* Software Centre System
-*  author: Anthony Dillon
-*/
+ *  Ubuntu Software Centre
+ *
+ *  Authors:  2011-2014, Anthony Dillon
+ */
 
 function SoftwareSystem($parent) {
   var _this = this;

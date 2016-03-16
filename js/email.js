@@ -1,7 +1,8 @@
 /*
-* Email object
-*  author: Anthony Dillon
-*/
+ *  E-mail in Thunderbird Client
+ *
+ *  Authors:  2011-2012, Anthony Dillon
+ */
 
 function Email($id, $folder, $subject, $body, $from, $to, $date, $cc) {
   if ($subject==undefined) { $subject='Untitled Message'; }

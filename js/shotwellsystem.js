@@ -1,6 +1,7 @@
 /*
- *  Shotwell System
- *  author: Anthony Dillon
+ *  Shotwell
+ *
+ *  Authors:  2011-2014, Anthony Dillon
  */
 
 function ShotwellSystem($parent) {

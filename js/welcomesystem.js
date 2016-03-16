@@ -1,6 +1,7 @@
 /*
- *  Welcome System
- *  author: Anthony DIllon
+ *  Welcome Window
+ *
+ *  Authors:  2011-2013, Anthony Dillon
  */
 
 function WelcomeSystem($parent) {

@@ -1,6 +1,7 @@
 /*
  *  Notification System
- *  author: Anthony Dillon
+ *
+ *  Authors:  2011, Anthony Dillon
  */
 
 function NotificationSystem() {

@@ -1,7 +1,8 @@
 /*
-* Firefox system
-*   author: Anthony Dillon
-*/
+ *  Firefox Web Browser
+ *
+ *  Authors:  2011-2014, Anthony Dillon
+ */
 
 function FirefoxSystem($parent) {
   var backHistory = new Array();
