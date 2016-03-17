@@ -21,7 +21,6 @@ var shutdownSystem = null;
 var libreSystem = null;
 var currentSystemSelected = null;
 var currentSelectedFullscreen = false;
-//var workspaces = null;
 var shotwellSystem = null;
 var welcomeSystem = null;
 var moviePlayerSystem = null;
@@ -138,6 +137,7 @@ function init() {
 }
 
 function setupTopMenu() {
+  // MATE Main Menu
   $('.panel .panel-items div').bind('click', function() {
     var hasSelected = $(this).hasClass('selected');
     closeDropDowns();
@@ -158,6 +158,15 @@ function setupTopMenu() {
       //systemMenu.setLocked(false);
     }
   });
+
+  // Application sub-menus
+  $('#apps-accessories').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-accessories').show();  });
+  $('#apps-graphics').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-graphics').show();  });
+  $('#apps-internet').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-internet').show();  });
+  $('#apps-office').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-office').show();  });
+  $('#apps-media').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-media').show();  });
+  $('#apps-systools').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-systools').show();  });
+  $('#apps-univaccess').bind('mouseover',function() {  $('.submenu').hide(); $('#submenu-univaccess').show();  });
 
   $('.panel .panel-items div ul li').bind('click',function() {
     switch ( $.trim($(this).text()) ) {
@@ -213,7 +222,6 @@ function setupTopMenu() {
     }
   });
 }
-
 
 var scrollingTimer = null;
 function SystemMenu($parent) {
@@ -332,13 +340,6 @@ function SystemMenu($parent) {
         _parent.fileSystem.open();
         $('.folder ').trigger('mousedown');
         break;
-      case 'workspace':
-        if (_parent.workspaces.isOpen()) {
-            _parent.workspaces.close();
-        } else {
-            _parent.workspaces.open();
-        }
-        break;
       default:
         openedApp = false;
         _parent.errorMessage.open();
@@ -359,6 +360,7 @@ function SystemMenu($parent) {
   }
 
   this.openWindow = function($icon) {
+    console.log('fixme:openWindow unimplemented')
     if ($("#menu ul li."+$icon).hasClass('temp')) {
       $("#menu ul li."+$icon).show();
     }

@@ -6,6 +6,9 @@
  *            2016, Luke Horwell <lukehorwell37+code@gmail.com>
  */
 
+/**********************
+ * Panel Base Layout
+/**********************/
 .panel {
   background-image: url(../img/panel/bg.jpg);
   background-repeat: repeat-x;
@@ -32,21 +35,6 @@
   font-size: 15px;
 }
 
-.panel .dropShadow {
-  -moz-box-shadow: 0px 0px 10px #000;
-  -webkit-box-shadow: 0px 0px 10px #000;
-  box-shadow: 0px 0px 10px #000;
-}
-
-.panel #panel-menu-icon {
-  background: url('../img/panel/menu-icon.png') no-repeat center center;
-  width: 20px;
-  height: 24px;
-  top: 0;
-  left: 0;
-  position: absolute;
-}
-
 .panel .panel-left {
   float: left;
   padding-top: 3px;
@@ -62,35 +50,117 @@
   overflow: hidden;
 }
 
-.panel div .drop-down {
+.panel div ul {
+  list-style-position: inside;
+}
+
+.panel div img.disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40)
+}
+
+/**********************
+ * Panel Shadows
+/**********************/
+.panel .dropShadow {
+  -moz-box-shadow: 0px 0px 10px #000;
+  -webkit-box-shadow: 0px 0px 10px #000;
+  box-shadow: 0px 0px 10px #000;
+}
+
+/**********************
+ * Menu Icon
+/**********************/
+.panel #panel-menu-icon {
+  background: url('../img/panel/menu-icon.png') no-repeat center center;
+  width: 20px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+/**********************
+ * Drop-down Menus
+/**********************/
+.drop-down {
   list-style-type: none;
   background: #464641;
-  padding: 0px 5px;
+  padding: 0px 0px;
   margin-top: 0px;
   -moz-box-shadow: -1px 1px 5px #000000;
-    -webkit-box-shadow: -1px 1px 5px #000000;
+  -webkit-box-shadow: -1px 1px 5px #000000;
   box-shadow: -1px 1px 5px #000000;
   position: absolute;
   display: none;
   z-index: 10;
 }
 
-.panel div .drop-down li.disabled {
-  color: #666;
+/* Left Menu */
+.panel-left ul li {
+  height: 20px;
+  padding: 4px 2px 5px 5px;
 }
 
-.panel div .drop-down li .key-combo {
+.panel-left .menu-icon {
+  padding: 1px;
+  margin-right: 4px;
+}
+
+.panel-left .panel-icon {
+  padding: 0;
+  margin: 0;
+  top: -2px;
+  position: relative;
+}
+
+/* Right Indicators */
+.panel-right ul li {
+  height: 18px;
+  padding: 3px 3px 3px 15px;
+}
+
+.panel div ul li img {
+  margin-left: -10px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.panel div ul li.divider {
+  height: 1px;
+  background: #3d3c39;
+  border-bottom: 1px solid #484844;
+  padding: 0px;
+  margin: 4px 0px;
+}
+
+.panel .selected {
+  background: url(../img/panel/selected-bg.jpg) repeat-x;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.drop-down li.disabled {
+  color: white !important;
+  opacity: 0.3;
+}
+
+.drop-down li .key-combo {
   float: right;
   color: #666;
   background-color: transparent;
 }
 
-.panel div .drop-down li.disabled:hover {
+.drop-down li.disabled:hover {
   background: #464641;
   color: #666;
 }
 
-.panel div .drop-down li:hover {
+.drop-down li:hover {
   background: url(../img/panel/drop-down-hover.jpg) repeat-x;
   color: white;
 }
@@ -103,6 +173,9 @@
   margin-left: 18px;
 }
 
+/**********************
+ * Drop-down Positions
+/**********************/
 .panel #applications .drop-down {
   width: 208px;
   left: 0;
@@ -159,35 +232,9 @@
   margin-top: 0;
 }
 
-.panel div img.disabled {opacity: 0.4; filter: alpha(opacity=40)}
-.panel div ul {
-  list-style-position: inside;
-}
-
-.panel div ul li {
-  height: 18px;
-  padding: 3px 3px 3px 15px;
-}
-
-.panel div ul li img {
-  margin-left: -10px;
-  margin-right: 5px;
-  vertical-align: middle;
-}
-
-.panel div ul li.ticked {
-  list-style-image: url('../img/panel/tic7pxk.png');
-  padding-left: 0px;
-}
-
-.panel div ul li.divider {
-  height: 1px;
-  background: #3d3c39;
-  border-bottom: 1px solid #484844;
-  padding: 0px;
-  margin: 4px 0px;
-}
-
+/**********************
+ * Drop-down Alignments
+/**********************/
 .panel #connection,
 .panel #speakers,
 .panel #bluetooth {
@@ -268,12 +315,47 @@
   margin-top: 12px;
 }
 
-.panel .selected {
-  background: url(../img/panel/selected-bg.jpg) repeat-x;
-  -webkit-border-top-left-radius: 2px;
-  -webkit-border-top-right-radius: 2px;
-  -moz-border-radius-topleft: 2px;
-  -moz-border-radius-topright: 2px;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+/**********************
+ * Sub Drop-down Menus
+/**********************/
+#submenu-accessories {
+  top: 24px;
+  left: 210px;
+  width: 250px;
+}
+
+#submenu-graphics {
+  top: 54px;
+  left: 210px;
+  width: 250px;
+}
+
+#submenu-internet {
+  top: 83px;
+  left: 210px;
+  width: 250px;
+}
+
+#submenu-office {
+  top: 112px;
+  left: 210px;
+  width: 210px;
+}
+
+#submenu-media {
+  top: 140px;
+  left: 210px;
+  width: 200px;
+}
+
+#submenu-systools {
+  top: 169px;
+  left: 210px;
+  width: 240px;
+}
+
+#submenu-univaccess {
+  top: 199px;
+  left: 210px;
+  width: 180px;
 }

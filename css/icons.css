@@ -1,0 +1,118 @@
+/*
+ *  Icons used in spritesheets
+ *
+ *  Authors:  2016, Luke Horwell <lukehorwell37+code@gmail.com>
+ */
+
+/**********************
+ * Base Dimensions
+/**********************/
+.icon-22 {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  vertical-align: middle;
+  background-image: url('../img/spritesheets/icons-22.png');
+  background-repeat: no-repeat;
+  padding: 0 !important;
+}
+
+/**********************
+ * 22px Menus
+/**********************/
+/* ---- Applications ---- */
+.icon-22.accessories { background-position: -22px 0px; }
+.icon-22.graphics { background-position: 0px -22px; }
+.icon-22.internet { background-position: 0px -44px; }
+.icon-22.office { background-position: 0px -66px; }
+.icon-22.media { background-position: 0px -88px; }
+.icon-22.systools { background-position: 0px -110px; }
+.icon-22.univaccess { background-position: 0px -132px; }
+
+/* ---- Places ---- */
+.icon-22.home { background-position: 0px -154px; }
+.icon-22.desktop { background-position: -22px -154px; }
+.icon-22.computer { background-position: -44px -154px; }
+.icon-22.network { background-position: -66px -154px; }
+.icon-22.globe { background-position: -88px -154px; }
+.icon-22.recent { background-position: -110px -154px; }
+
+/* ---- System ---- */
+.icon-22.administration { background-position: -132px -154px; }
+.icon-22.preferences { background-position: -154px -154px; }
+.icon-22.help { background-position: -176px -154px; }
+.icon-22.mate { background-position: -198px -154px; }
+.icon-22.lock { background-position: -220px -154px; }
+.icon-22.logout { background-position: -242px -154px; }
+.icon-22.power { background-position: -264px -154px; }
+.icon-22.um { background-position: -286px -154px; }
+
+/* ---- Accessories ---- */
+.icon-22.backups { background-position: -44px 0px; }
+.icon-22.charmap { background-position: -66px 0px; }
+.icon-22.archive { background-position: -88px 0px; }
+.icon-22.disks { background-position: -110px 0px; }
+.icon-22.galc { background-position: -132px 0px; }
+.icon-22.search { background-position: -154px 0px; }
+.icon-22.passkeys { background-position: -176px 0px; }
+.icon-22.plank { background-position: -198px 0px; }
+.icon-22.pluma { background-position: -220px 0px; }
+.icon-22.screenshot { background-position: -242px 0px; }
+
+/* ---- Graphics ---- */
+.icon-22.eom { background-position: -22px -22px; }
+.icon-22.colpicker { background-position: -44px -22px; }
+.icon-22.shotwell { background-position: -66px -22px; }
+.icon-22.simplescan { background-position: -88px -22px; }
+
+/* ---- Internet ---- */
+.icon-22.firefox { background-position: -22px -44px; }
+.icon-22.hexchat { background-position: -44px -44px; }
+.icon-22.pidgin { background-position: -66px -44px; }
+.icon-22.thunderbird { background-position: -88px -44px; }
+.icon-22.transmission { background-position: -110px -44px; }
+
+/* ---- Office ---- */
+.icon-22.atril { background-position: -22px -66px; }
+.icon-22.lo { background-position: -44px -66px; }
+.icon-22.lo-calc { background-position: -66px -66px; }
+.icon-22.lo-draw { background-position: -88px -66px; }
+.icon-22.lo-impress { background-position: -110px -66px; }
+.icon-22.lo-writer { background-position: -132px -66px; }
+.icon-22.dictionary { background-position: -154px -66px; }
+
+/* ---- Sound & Video ---- */
+.icon-22.brasero { background-position: -22px -88px; }
+.icon-22.cheese { background-position: -44px -88px; }
+.icon-22.rhythmbox { background-position: -66px -88px; }
+.icon-22.sound { background-position: -88px -88px; }
+.icon-22.vlc { background-position: -110px -88px; }
+
+/* ---- System Tools ---- */
+.icon-22.avahi { background-position: -22px -110px; }
+.icon-22.caja { background-position: -44px -110px; }
+.icon-22.dconf { background-position: -66px -110px; }
+.icon-22.gdebi { background-position: -88px -110px; }
+.icon-22.logviewer { background-position: -110px -110px; }
+.icon-22.diskanalyser { background-position: -132px -110px; }
+.icon-22.sysmonitor { background-position: -154px -110px; }
+.icon-22.terminal { background-position: -176px -110px; }
+.icon-22.powerstats { background-position: -198px -110px; }
+
+/* ---- Accessibilty ---- */
+.icon-22.onboard { background-position: -22px -132px; }
+.icon-22.orca { background-position: -44px -132px; }
+
+/**********************
+ * Small Icons
+/**********************/
+.sub-dropdown {
+  width: 22px;
+  height: 22px;
+  float: right;
+  background-image: url('../img/spritesheets/icons-22.png');
+  background-position: -264px 0px;
+  background-repeat: no-repeat;
+  padding: 0px;
+  background-color: transparent !important;
+}

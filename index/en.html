@@ -42,34 +42,109 @@
       </div>
     </div>
     <div class="panel dropShadow">
-      <div class="panel-left  panel-items">
+      <div class="panel-left panel-items">
         <div id="applications">
           <div id="panel-menu-icon"></div> Applications
           <ul class="drop-down">
-            <li class="disabled">
-              No items to display.
-            </li>
-            <li class="divider"></li>
+            <li id="apps-accessories"><div class="icon-22 menu-icon accessories"></div> Accessories <span class="sub-dropdown"></span></li>
+            <li id="apps-graphics"><div class="icon-22 menu-icon graphics"></div> Graphics <span class="sub-dropdown"></span></li>
+            <li id="apps-internet"><div class="icon-22 menu-icon internet"></div> Internet <span class="sub-dropdown"></span></li>
+            <li id="apps-office"><div class="icon-22 menu-icon office"></div> Office <span class="sub-dropdown"></span></li>
+            <li id="apps-media"><div class="icon-22 menu-icon media"></div> Sound & Video <span class="sub-dropdown"></span></li>
+            <li id="apps-systools"><div class="icon-22 menu-icon systools"></div> System Tools <span class="sub-dropdown"></span></li>
+            <li id="apps-univaccess"><div class="icon-22 menu-icon univaccess"></div> Universal Access <span class="sub-dropdown"></span></li>
           </ul>
         </div>
+        <ul id="submenu-accessories" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon backups"></div> Backups</li>
+          <li><div class="icon-22 menu-icon charmap"></div> Character Map</li>
+          <li><div class="icon-22 menu-icon disks"></div> Disks</li>
+          <li><div class="icon-22 menu-icon archive"></div> Engrampa Archive Manager</li>
+          <li><div class="icon-22 menu-icon galc"></div> Galculator</li>
+          <li><div class="icon-22 menu-icon search"></div> MATE Search Tool</li>
+          <li><div class="icon-22 menu-icon passkeys"></div> Passwords and Keys</li>
+          <li><div class="icon-22 menu-icon plank"></div> Plank</li>
+          <li><div class="icon-22 menu-icon pluma"></div> Pluma  Text Editor</li>
+          <li><div class="icon-22 menu-icon screenshot"></div> Take Screenshot</li>
+        </ul>
+        <ul id="submenu-graphics" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon eom"></div> Eye of MATE Image Viewer</li>
+          <li><div class="icon-22 menu-icon colpicker"></div> MATE Color Selection</li>
+          <li><div class="icon-22 menu-icon shotwell"></div> Shotwell</li>
+          <li><div class="icon-22 menu-icon simplescan"></div> Simple Scan</li>
+        </ul>
+        <ul id="submenu-internet" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon firefox"></div> Firefox Web Browser</li>
+          <li><div class="icon-22 menu-icon hexchat"></div> HexChat</li>
+          <li><div class="icon-22 menu-icon pidgin"></div> Pidgin Internet Messenger</li>
+          <li><div class="icon-22 menu-icon thunderbird"></div> Thunderbird Mail</li>
+          <li><div class="icon-22 menu-icon transmission"></div> Transmission</li>
+        </ul>
+        <ul id="submenu-office" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon atril"></div> Atril Document Viewer</li>
+          <li><div class="icon-22 menu-icon lo"></div> LibreOffice</li>
+          <li><div class="icon-22 menu-icon lo-calc"></div> LibreOffice Calc</li>
+          <li><div class="icon-22 menu-icon lo-draw"></div> LibreOffice Draw</li>
+          <li><div class="icon-22 menu-icon lo-impress"></div> LibreOffice Impress</li>
+          <li><div class="icon-22 menu-icon lo-writer"></div> LibreOffice Writer</li>
+          <li><div class="icon-22 menu-icon dictionary"></div> Dictionary</li>
+        </ul>
+        <ul id="submenu-media" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon brasero"></div> Brasero</li>
+          <li><div class="icon-22 menu-icon cheese"></div> Cheese</li>
+          <li><div class="icon-22 menu-icon rhythmbox"></div> Rhythmbox</li>
+          <li><div class="icon-22 menu-icon sound"></div> Sound</li>
+          <li><div class="icon-22 menu-icon vlc"></div> VLC media player</li>
+        </ul>
+        <ul id="submenu-systools" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon avahi"></div> Avahi Zeroconf Browser</li>
+          <li><div class="icon-22 menu-icon caja"></div> Caja</li>
+          <li><div class="icon-22 menu-icon dconf"></div> dconf Editor</li>
+          <li><div class="icon-22 menu-icon gdebi"></div> GDebi Package Installer</li>
+          <li><div class="icon-22 menu-icon logviewer"></div> Log File Viewer</li>
+          <li><div class="icon-22 menu-icon diskanalyser"></div> MATE Disk Usage Analyser</li>
+          <li><div class="icon-22 menu-icon sysmonitor"></div> MATE System Monitor</li>
+          <li><div class="icon-22 menu-icon terminal"></div> MATE Terminal</li>
+          <li><div class="icon-22 menu-icon powerstats"></div> Power Statistics</li>
+        </ul>
+        <ul id="submenu-univaccess" class="drop-down submenu" style="display:none">
+          <li><div class="icon-22 menu-icon onboard"></div> Onboard</li>
+          <li><div class="icon-22 menu-icon search"></div> Screen Magnifier</li>
+          <li><div class="icon-22 menu-icon orca"></div> Screen Reader</li>
+        </ul>
         <div id="places">
           Places
           <ul class="drop-down">
-            <li class="disabled">
-              No items to display.
-            </li>
+            <li><div class="icon-22 menu-icon home"></div> Home Folder</li>
+            <li><div class="icon-22 menu-icon desktop"></div> Desktop</li>
             <li class="divider"></li>
+            <li><div class="icon-22 menu-icon computer"></div> Computer</li>
+            <li class="divider"></li>
+            <li><div class="icon-22 menu-icon network"></div> Network</li>
+            <li><div class="icon-22 menu-icon globe"></div> Connect to Server...</li>
+            <li class="divider"></li>
+            <li class="disabled"><div class="icon-22 menu-icon search"></div> MATE Search Tool</li>
+            <li class="disabled"><div class="icon-22 menu-icon recent"></div> Recent Documents <span class="sub-dropdown"></span></li></li>
           </ul>
         </div>
         <div id="system">
           System
           <ul class="drop-down">
-            <li class="disabled">
-              No items to display.
-            </li>
+            <li class="disabled"><div class="icon-22 menu-icon preferences"></div> Preferences <span class="sub-dropdown"></span></li>
+            <li class="disabled"><div class="icon-22 menu-icon administration"></div> Administration <span class="sub-dropdown"></span></li>
             <li class="divider"></li>
+            <li><div class="icon-22 menu-icon preferences"></div> Control Centre</li>
+            <li><div class="icon-22 menu-icon um"></div> Welcome</li>
+            <li class="divider"></li>
+            <li><div class="icon-22 menu-icon help"></div> Help</li>
+            <li><div class="icon-22 menu-icon mate"></div> About MATE</li>
+            <li class="divider"></li>
+            <li class="disabled"><div class="icon-22 menu-icon lock"></div> Lock Screen</li>
+            <li><div class="icon-22 menu-icon logout"></div> Log Out…</li>
+            <li><div class="icon-22 menu-icon power"></div> Shut Down…</li>
           </ul>
         </div>
+        <div id="firefox-panel-button" class="icon-22 panel-icon firefox"></div>
       </div>
       <div class="panel-right">
         <div class="panel-items">
@@ -1302,5 +1377,6 @@
     <link rel="stylesheet" href="../css/libre.css" inline />
     <link rel="stylesheet" href="../css/notification.css" inline />
     <link rel="stylesheet" href="../css/software-centre.css" inline />
+    <link rel="stylesheet" href="../css/icons.css" inline />
   </body>
 </html>
