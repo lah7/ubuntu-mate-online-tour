@@ -190,31 +190,59 @@ input {
   margin-left: 10px;
 }
 
-.control .close {
-  background: url(../img/folder/close.jpg) no-repeat;
+/* Close Window Button */
+.control .min {
+  background-image: url('../img/spritesheets/window-buttons.png');
+  background-repeat: no-repeat;
   height: 19px;
-  width: 18px;
-  float: left;
+  width: 19px;
+  float: right;
 }
-
-.control div:hover {
+.control .min:hover {
   background-position: 0px -19px !important;
 }
 
-.control .min {
-  background: url(../img/folder/minimise.jpg) no-repeat;
+/* Maximise Window Button */
+.control .max {
+  background-image: url('../img/spritesheets/window-buttons.png');
+  background-repeat: no-repeat;
+  background-position: -19px 0px;
+  height: 19px;
+  width: 19px;
+  float: right;
+}
+.control .max:hover {
+  background-position: -19px -19px !important;
+}
+
+/* Minimise Window Button */
+.control .close {
+  background-image: url('../img/spritesheets/window-buttons.png');
+  background-repeat: no-repeat;
+  background-position: -38px 0px;
+  height: 19px;
+  width: 19px;
+  float: right;
+  margin-right: 4px;
+}
+.control .close:hover {
+  background-position: -38px -19px !important;
+}
+
+/* Menu Window Button */
+.control .menu {
+  background-image: url('../img/spritesheets/window-buttons.png');
+  background-repeat: no-repeat;
+  background-position: -57px 0px;
   height: 19px;
   width: 19px;
   float: left;
 }
-
-.control .max {
-  background: url(../img/folder/maximise.jpg) no-repeat;
-  height: 19px;
-  width: 17px;
-  float: left;
+.control .menu:hover {
+  background-position: -57px -19px !important;
 }
 
+/**************************/
 .window-title {
   color: #807d78;
   float: left;
