@@ -59,7 +59,7 @@ function FileSystem($parent, $startingDir) {
 
     $('.folder .control .min').click(function() {
       $('.folder').hide();
-      _parent.systemMenu.wiggle('home');
+      _parent.systemMenu.minimize('home');
       minified = true;
     });
 

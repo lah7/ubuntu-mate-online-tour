@@ -212,7 +212,7 @@ function SoftwareSystem($parent) {
 
   this.min = function() {
     $('#software-centre ').hide();
-    _parent.systemMenu.wiggle('software');
+    _parent.systemMenu.minimize('software');
     minified = true;
   }
 

@@ -25,7 +25,7 @@ function FirefoxSystem($parent) {
 
     $('.firefox-window  .control .min').click(function() {
       $('.firefox-window ').hide();
-      _parent.systemMenu.wiggle('firefox');
+      _parent.systemMenu.minimize('firefox');
     });
 
     $('.firefox-window .control .max').click(function() {

@@ -223,23 +223,39 @@ function setupTopMenu() {
   });
 }
 
-var scrollingTimer = null;
 function SystemMenu($parent) {
   var _parent = $parent;
   var _this = this;
-  var menuOut = false;
-  var menuTimeout = null;
-  var goingIn = false;
-  var locked = false;
-  var menuScrollAmount = 0;
-  var scrolling = false;
-  var selectedMenu;
 
   this.init = function() {
-    console.log('fixme:window list unimplemented: init systemmenu')
+    $('.window-button').hide();
+    $('#window-list li').click(function() {
+      id = $(this).attr('id');
+      console.log('[SystemMenu] Clicked: ' + id);
+      // Window is already open
+      if ( $(this).hasClass("active") ) {
+        _this.minimize(id);
+      } else {
+        // Minimized state
+        _this.openWindow(id);
+      }
+    });
+    console.log('[SystemMenu] Initialised.')
   }
 
-  this.handleMenuClick = function($menu) {
+  this.minimize = function($menu) {
+    console.log('[SystemMenu] Window Minimised: ' + $menu);
+    $('#' + $menu + "-btn").removeClass('active');
+  }
+
+  this.openWindow = function($menu) {
+    if ( $menu == null ) {
+      return;
+    }
+    console.log('[SystemMenu] Window Opened: ' + $menu);
+    $('.window-button').removeClass('active');
+    $('#' + $menu + "-btn").show();
+    $('#' + $menu + "-btn").addClass('active');
     var openedApp = true;
     switch($menu) {
       case 'home':
@@ -289,20 +305,6 @@ function SystemMenu($parent) {
         }
         div.trigger('mousedown');
         break;
-      case 'uone':
-        var div = $('#ubuntuone-window');
-        if (! div.is(':visible')) {
-           _parent.ubuntuOneSystem.open();
-        }
-        $('#ubuntuone-window ').trigger('mousedown');
-        break;
-      case 'software':
-        var div = $('#software-centre');
-        if (! div.is(':visible')) {
-          _parent.softwareSystem.open();
-        }
-        div.trigger('mousedown');
-        break;
       case 'email':
         var div = $('.email-window ');
         if (! div.is(':visible')) {
@@ -342,30 +344,25 @@ function SystemMenu($parent) {
         break;
       default:
         openedApp = false;
-        _parent.errorMessage.open();
         break;
+      //~ default:
+        //~ openedApp = false;
+        //~ console.log("Error: " + $menu)
+       //~ _parent.errorMessage.open();
+        //~ break;
     }
-    if (openedApp) {
-      console.log('fixme:handleMenuClick for openedApp.')
-    }
+    //~ if (openedApp) {
+      //~ this.openWindow(this.icon);
+    //~ }
   }
 
-  this.getSelectedMenu = function() {
-    return selectedMenu;
+  this.closeWindow = function($menu) {
+    // Destroy window on close
+    console.log('[SystemMenu] Window Closed: ' + $menu);
+    $('#' + $menu + "-btn").hide();
+    parent.guidedTourSystem.setCurrentIndex(-1);
   }
 
-  this.closeWindow = function($icon) {
-    console.log('fixme:unimplemented closeWindow')
-    _parent.guidedTourSystem.setCurrentIndex(-1);
-  }
-
-  this.openWindow = function($icon) {
-    console.log('fixme:openWindow unimplemented')
-    if ($("#menu ul li."+$icon).hasClass('temp')) {
-      $("#menu ul li."+$icon).show();
-    }
-    $("#menu ul li."+$icon+" img").show();
-  }
 }
 
 function sliderUpdate($percent, $muted) {

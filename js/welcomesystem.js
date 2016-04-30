@@ -42,55 +42,55 @@ function WelcomeSystem($parent) {
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(0);
-        _parent.systemMenu.handleMenuClick('home');
+        _parent.systemMenu.openWindow('home');
       break;
       case 'surf-the-web':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(1);
-          _parent.systemMenu.handleMenuClick('firefox');
+          _parent.systemMenu.openWindow('firefox');
       break;
       case 'check-email':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(2);
-        _parent.systemMenu.handleMenuClick('email');
+        _parent.systemMenu.openWindow('email');
       break;
       case 'view-photos':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(3);
-        _parent.systemMenu.handleMenuClick('shotwell');
+        _parent.systemMenu.openWindow('shotwell');
       break;
       case 'find-apps':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(4);
-        _parent.systemMenu.handleMenuClick('software');
+        _parent.systemMenu.openWindow('software');
       break;
       case 'create-documents':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(5);
-        _parent.systemMenu.handleMenuClick('writer');
+        _parent.systemMenu.openWindow('writer');
       break;
       case 'create-presentations':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(6);
-        _parent.systemMenu.handleMenuClick('impress');
+        _parent.systemMenu.openWindow('impress');
       break;
       case 'create-spreadsheets':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(7);
-          _parent.systemMenu.handleMenuClick('calc');
+          _parent.systemMenu.openWindow('calc');
       break;
       case 'watch-video':
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(8);
-        _parent.systemMenu.handleMenuClick('movieplayer');
+        _parent.systemMenu.openWindow('movieplayer');
         _parent.moviePlayerSystem.addVideo();
       break;
       case 'explore-mode':
@@ -101,7 +101,7 @@ function WelcomeSystem($parent) {
         $('#welcome').hide();
         _isOpen = false;
         _parent.guidedTourSystem.setCurrentIndex(0);
-        _parent.systemMenu.handleMenuClick('home');
+        _parent.systemMenu.openWindow('home');
       break;
       default:
         return false;

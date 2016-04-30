@@ -5,7 +5,7 @@
  */
 
 /**********************
- * Base Dimensions
+ * 22x22
 /**********************/
 .icon-22 {
   width: 22px;
@@ -17,9 +17,6 @@
   padding: 0 !important;
 }
 
-/**********************
- * 22px Menus
-/**********************/
 /* ---- Applications ---- */
 .icon-22.accessories { background-position: -22px 0px; }
 .icon-22.graphics { background-position: 0px -22px; }
@@ -100,14 +97,42 @@
 .icon-22.terminal { background-position: -176px -110px; }
 .icon-22.powerstats { background-position: -198px -110px; }
 
-/* ---- Accessibilty ---- */
+/* ---- Accessibility ---- */
 .icon-22.onboard { background-position: -22px -132px; }
 .icon-22.orca { background-position: -44px -132px; }
 
 /**********************
- * Small Icons
+ * 16x16
+/**********************/
+.icon-16 {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  vertical-align: middle;
+  background-image: url('../img/spritesheets/icons-16.png');
+  background-repeat: no-repeat;
+  padding: 0 !important;
+}
+
+/* ---- General ---- */
+.icon-16.desktop { background-position: -16px 0px; }
+.icon-16.trash { background-position: -32px 0px; }
+.icon-16.home { background-position: -48px 0px; }
+.icon-16.firefox { background-position: -64px 0px; }
+.icon-16.shotwell { background-position: -80px 0px; }
+.icon-16.writer { background-position: -96px 0px; }
+.icon-16.impress { background-position: -112px 0px; }
+.icon-16.calc { background-position: -128px 0px; }
+.icon-16.thunderbird { background-position: -144px 0px; }
+.icon-16.vlc { background-position: -160px 0px; }
+
+/* ---- Applications ---- */
+
+/**********************
+ * Icon Holders
 /**********************/
 .sub-dropdown {
+  display: inline-block;
   width: 22px;
   height: 22px;
   float: right;
@@ -116,4 +141,18 @@
   background-repeat: no-repeat;
   padding: 0px;
   background-color: transparent !important;
+}
+
+.panel-icon {
+  display: inline-block;
+  float: left;
+  width: 22px;
+  height: 22px;
+  margin: 2px;
+}
+
+.window-button-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }

@@ -23,8 +23,7 @@
 }
 
 .panel-bottom {
-  background-image: url(../img/panel/bg.jpg);
-  background-repeat: repeat-x;
+  background-color: #3C3B37;
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -57,6 +56,18 @@
 .panel div img.disabled {
   opacity: 0.4;
   filter: alpha(opacity=40)
+}
+
+.panel-divider {
+  display: inline-block;
+  float: left;
+  width: 14px;
+  height: 22px;
+  background-image: url('../img/spritesheets/icons-22.png');
+  background-position: -132px -22px;
+  background-repeat: no-repeat;
+  padding: 0px;
+  float: left;
 }
 
 /**********************
@@ -358,4 +369,38 @@
   top: 199px;
   left: 210px;
   width: 180px;
+}
+
+/**********************
+ * Window List
+/**********************/
+#window-list {
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  list-style-type: none;
+  background-color: #3C3B37;
+}
+
+.window-button {
+  width: 207px;
+  height: 24px !important;
+  background-color: #3D3D39;
+  border: #31302d 1px solid;
+  display: inline-block;
+  margin: 0;
+  margin-left: -2px;
+  margin-right: -2px;
+  padding: 2px !important;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+}
+
+.window-button:hover, .window-button:focus {
+  background-color: #4b4b47 !important;
+}
+
+.window-button.active {
+  background-color: #2B2B28;
+  border: #272625 1px solid;
 }

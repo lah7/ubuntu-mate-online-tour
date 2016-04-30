@@ -81,7 +81,7 @@ function MoviePlayerSystem($parent) {
 
   this.min = function() {
     $('#movieplayer ').hide();
-    _parent.systemMenu.wiggle('movieplayer');
+    _parent.systemMenu.minimize('movieplayer');
     minified = true;
     _isOpen = false;
   }

@@ -98,7 +98,7 @@ function GuidedTourSystem($parent) {
     }
     this.update();
     this.updateHash();
-    _parent.systemMenu.handleMenuClick(guides[currentIndex].system);
+    _parent.systemMenu.openWindow(guides[currentIndex].system);
     arrowClicked = false;
   }
 
@@ -112,7 +112,7 @@ function GuidedTourSystem($parent) {
     }
     this.update();
     this.updateHash();
-    _parent.systemMenu.handleMenuClick(guides[currentIndex].system);
+    _parent.systemMenu.openWindow(guides[currentIndex].system);
     arrowClicked = false;
   }
 

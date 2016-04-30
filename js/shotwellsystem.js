@@ -232,7 +232,7 @@ function ShotwellSystem($parent) {
 
   this.min = function() {
     $('#shotwell ').hide();
-    _parent.systemMenu.wiggle('shotwell');
+    _parent.systemMenu.minimize('shotwell');
     minified = true;
   }
 

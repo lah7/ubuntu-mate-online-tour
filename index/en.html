@@ -125,7 +125,7 @@
             <li><div class="icon-22 menu-icon globe"></div> Connect to Server...</li>
             <li class="divider"></li>
             <li class="disabled"><div class="icon-22 menu-icon search"></div> MATE Search Tool</li>
-            <li class="disabled"><div class="icon-22 menu-icon recent"></div> Recent Documents <span class="sub-dropdown"></span></li></li>
+            <li class="disabled"><div class="icon-22 menu-icon recent"></div> Recent Documents <span class="sub-dropdown"></span></li>
           </ul>
         </div>
         <div id="system">
@@ -223,8 +223,24 @@
       </div>
     </div>
     <div class="panel-bottom">
-      <div class="panel-left"></div>
-      <div class="panel-right"></div>
+      <div class="panel-left panel-bottom">
+        <div class="icon-16 panel-icon desktop"></div>
+        <div class="panel-divider"></div>
+        <ul id="window-list">
+          <li id="home-btn" class="window-button"><div class="icon-16 window-button-icon home"></div> <span id="current-directory">Home</span></li>
+          <li id="firefox-btn" class="window-button"><div class="icon-16 window-button-icon firefox"></div> Mozilla Firefox</li>
+          <li id="shotwell-btn" class="window-button"><div class="icon-16 window-button-icon shotwell"></div> Shotwell</li>
+          <li id="writer-btn" class="window-button"><div class="icon-16 window-button-icon writer"></div> LibreOffice Writer</li>
+          <li id="impress-btn" class="window-button"><div class="icon-16 window-button-icon impress"></div> LibreOffice Impress</li>
+          <li id="calc-btn" class="window-button"><div class="icon-16 window-button-icon calc"></div> LibreOffice Calc</li>
+          <li id="email-btn" class="window-button"><div class="icon-16 window-button-icon thunderbird"></div> Mozilla Thunderbird</li>
+          <li id="movieplayer-btn" class="window-button"><div class="icon-16 window-button-icon vlc"></div> VLC Media Player</li>
+          <li id="rubbish-btn" class="window-button"><div class="icon-16 window-button-icon trash"></div> Rubbish Bin</li>
+        </ul>
+      </div>
+      <div class="panel-right">
+        ...
+      </div>
     </div>
     <div id="tooltip">
       <div class="shadow-arrow"></div>
@@ -1354,7 +1370,6 @@
     <script src="../js/guidedtoursystem.js" inline ></script>
     <script src="../js/filesystem.js" inline ></script>
     <script src="../js/folders.js" inline ></script>
-    <script src="../js/panel.js" inline ></script>
     <script src="../js/internetsystem.js" inline ></script>
     <script src="../js/emailsystem.js" inline ></script>
     <script src="../js/systemsettings.js" inline ></script>

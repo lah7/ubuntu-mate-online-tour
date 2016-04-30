@@ -73,7 +73,7 @@ function EmailSystem($parent) {
 
     $('#email-write .control .min').click(function() {
       $('#email-write').hide();
-      _parent.systemMenu.wiggle('email');
+      _parent.systemMenu.minimize('email');
       writeMinified = true;
     });
 
@@ -98,7 +98,7 @@ function EmailSystem($parent) {
 
     $('.email-window .control .min').click(function() {
       $('.email-window').hide();
-      _parent.systemMenu.wiggle('email');
+      _parent.systemMenu.minimize('email');
       minified = true;
     });
 
