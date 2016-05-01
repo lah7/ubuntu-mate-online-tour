@@ -26,7 +26,7 @@ os.mkdir(build_dir)
 
 # Load language configuration
 try:
-    lang_json = root_dir + '/index/lang.json'
+    lang_json = root_dir + '/translations/lang.json'
     with open(lang_json) as data_file:
         lang_data = json.load(data_file)
 except Exception as e:
