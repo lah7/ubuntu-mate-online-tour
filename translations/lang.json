@@ -1,6 +1,7 @@
 {
     "0": {
-        "code": "en_GB",
-        "string": "English"
+        "locale": "en",
+        "name": "English",
+        "help": "Please select your language."
     }
 }
