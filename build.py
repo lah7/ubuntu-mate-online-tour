@@ -48,6 +48,8 @@ for lang in lang_list:
 
     # Generate translated index pages
     print(col.ERROR + 'fixme:copy-base-page')
+    os.makedirs(build_dir + "/" + code)
+    shutil.copy(root_dir + "/html/base.html", build_dir + "/" + code + "/index.html")
     print(col.ERROR + 'fixme:translate-index-pages')
 
     # Strip page

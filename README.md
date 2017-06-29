@@ -28,8 +28,11 @@ This project is not actively maintained anymore, but feel free to contribute if 
 
 ## Testing
 
-The site is just flat HTML pages, so running the site is as easy as
-opening `index/en.html` with a browser, or running a simple server, e.g.:
+First, build the project to compile and optimise the assets.
+
+    build.py
+
+Host `build/` on a web server, Python includes a simple one:
 
     python -m SimpleHTTPServer 8000
 
