@@ -4,7 +4,7 @@
  *  Authors:  2011-2014, Anthony Dillon
  *            2014, deadlight@bgr0.com
  *            ----------------------------
- *            2016, Luke Horwell <lukehorwell37+code@gmail.com>
+ *            2016, Luke Horwell <luke@ubuntu-mate.org>
  */
 
 var _this = this;
