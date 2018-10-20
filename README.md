@@ -6,8 +6,7 @@ operating system inside a modern web browser.
 
 Originally based on the [Ubuntu Online Tour](https://launchpad.net/ubuntu-online-tour).
 
-## Abandoned!
-This project is not actively maintained anymore, but feel free to contribute if you think we can reboot this.
+**ABANDONED: This project was an experiment for Ubuntu MATE, but has been discontinued.**
 
 ### Objectives:
 
